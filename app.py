@@ -11,8 +11,7 @@ def index():
 
 @app.route('/chat'):
 def agent():
-   return agent.chat()
-
+   return agent.say_hello()
 
 if __name__ == '__main__':
     app.run(debug=True)
