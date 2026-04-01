@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import agent
 
 app = Flask(__name__)
 
@@ -7,6 +8,11 @@ def index():
     # You can run your python logic here and pass data to the template
     script_output = "Hello from the Flask server!"
     return render_template('index.html', output=script_output)
+
+@app.route('/chat'):
+def agent():
+   return agent.chat()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
