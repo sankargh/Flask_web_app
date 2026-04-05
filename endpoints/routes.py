@@ -1,12 +1,13 @@
 from flask import Blueprint, jsonify
-
+from .. import agent
 
 api_bp = Blueprint("api", __name__)
 
 
 @api_bp.get("/hello")
 def hello_world():
-    return "Hello World!"
+    message = agent.say_hello()
+    return message
 
 @api_bp.get("/api/data")
 def get_sample_data():
