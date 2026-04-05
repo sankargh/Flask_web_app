@@ -10,12 +10,14 @@ def index():
     return render_template('index.html', output=script_output)
 
 @app.route('/hello')
-def hello():
-   return agent.say_hello()
+def hello():   
+    script_output = agent.say_hello()
+    return render_template('index.html', output=script_output)
 
 @app.route('/chat')
 def chat():
-   return agent.chat()
+    script_output = agent.chat()
+    return render_template('index.html', output=script_output)
     
 if __name__ == '__main__':
     app.run(debug=True)
