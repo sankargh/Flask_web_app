@@ -9,9 +9,13 @@ def index():
     script_output = "Hello from the Flask server!"
     return render_template('index.html', output=script_output)
 
-@app.route('/chat'):
-def agent():
+@app.route('/hello'):
+def hello():
    return agent.say_hello()
 
+@app.route('/chat'):
+def chat():
+   return agent.chat()
+    
 if __name__ == '__main__':
     app.run(debug=True)
