@@ -1,9 +1,11 @@
 from flask import Blueprint, jsonify
 
+
 api_bp = Blueprint("api", __name__)
 
+
 @api_bp.get("/hello")
-def get_sample_data():
+def hello_world():
     return "Hello World!"
 
 @api_bp.get("/api/data")
