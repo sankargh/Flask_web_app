@@ -9,11 +9,11 @@ def index():
     script_output = "Hello from the Flask server!"
     return render_template('index.html', output=script_output)
 
-@app.route('/hello'):
+@app.route('/hello')
 def hello():
    return agent.say_hello()
 
-@app.route('/chat'):
+@app.route('/chat')
 def chat():
    return agent.chat()
     
