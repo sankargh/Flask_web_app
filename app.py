@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-import agent
+from flask import Flask
 from endpoints import api_bp
 
 app = Flask(__name__)
