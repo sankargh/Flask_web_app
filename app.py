@@ -2,8 +2,8 @@ from flask import Flask, render_template
 import agent
 from endpoints import api_bp
 
-app.register_blueprint(api_bp)
 app = Flask(__name__)
+app.register_blueprint(api_bp)
 
 @app.get("/")
 def read_root():
