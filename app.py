@@ -16,15 +16,15 @@ def read_root():
 #     script_output = "Hello from the Flask server!"
 #     return render_template('index.html', output=script_output)
 
-@app.route('/hello')
-def hello():   
-    script_output = agent.say_hello()
-    return render_template('index.html', output=script_output)
+# @app.route('/hello')
+# def hello():   
+#     script_output = agent.say_hello()
+#     return render_template('index.html', output=script_output)
 
-@app.route('/chat')
-def chat():
-    script_output = agent.chat()
-    return render_template('index.html', output=script_output)
+# @app.route('/chat')
+# def chat():
+#     script_output = agent.chat()
+#     return render_template('index.html', output=script_output)
     
 if __name__ == '__main__':
     app.run(debug=True)
