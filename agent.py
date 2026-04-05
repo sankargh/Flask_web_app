@@ -7,7 +7,7 @@ load_dotenv(override=True)
 # Hello Function definition
 def say_hello():
     """Returns simple hello text."""
-    return "Hello, World!"
+    return "Hello, World! I am an agent!"
 
 # Maxwell Function definition
 @function_tool
