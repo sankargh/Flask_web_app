@@ -1,13 +1,20 @@
 from flask import Flask, render_template
 import agent
+from endpoints import api_bp
 
+app.register_blueprint(api_bp)
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    # You can run your python logic here and pass data to the template
+@app.get("/")
+def read_root():
     script_output = "Hello from the Flask server!"
     return render_template('index.html', output=script_output)
+    
+# @app.route('/')
+# def index():
+#     # You can run your python logic here and pass data to the template
+#     script_output = "Hello from the Flask server!"
+#     return render_template('index.html', output=script_output)
 
 @app.route('/hello')
 def hello():   
