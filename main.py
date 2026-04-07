@@ -65,10 +65,7 @@ def read_root():
     <body>
         <header>
             <nav>
-                <a href="/" class="logo">Vercel + Flask</a>
-                <div class="nav-links">
-                    <a href="/api/data">API</a>
-                </div>
+                <a href="/" class="logo">Agent Utilities</a>
             </nav>
         </header>
         <main>
