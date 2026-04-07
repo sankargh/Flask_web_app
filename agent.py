@@ -22,8 +22,14 @@ agent = Agent(
     model="gpt-4o-mini"
 )
 
-async def chat(user_input: str, history):
+#Chat function definition
+async def chat(message):
     with trace("Test API from Git"):
-        result = await Runner.run(agent,user_input)
-    return result.final_output
-gr.ChatInterface(fn=chat).launch()
+        result = await Runner.run(agent,message)
+    return str(result.final_output)
+
+# async def chat(user_input: str, history):
+#     with trace("Test API from Git"):
+#         result = await Runner.run(agent,user_input)
+#     return result.final_output
+# gr.ChatInterface(fn=chat).launch()
