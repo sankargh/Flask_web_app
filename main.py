@@ -72,19 +72,6 @@ def read_root():
             </nav>
         </header>
         <main>
-            <div class="hero">
-                <h1>Vercel + Flask</h1>
-                <div class="hero-code">
-                    <pre><code><span class="keyword">from</span> <span class="module">flask</span> <span class="keyword">import</span> <span class="class">Flask</span>
-
-<span class="variable">app</span> = <span class="class">Flask</span>(<span class="string">__name__</span>)
-
-<span class="decorator">@app.get</span>(<span class="string">"/"</span>)
-<span class="keyword">def</span> <span class="function">read_root</span>():
-    <span class="keyword">return</span> {<span class="string">"Python"</span>: <span class="string">"on Vercel"</span>}</code></pre>
-                </div>
-            </div>
-
             <div class="cards">
                 <div class="card">
                     <h3>Sample Data</h3>
