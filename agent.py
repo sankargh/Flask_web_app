@@ -1,4 +1,3 @@
-import gradio as gr
 from agents import Agent, Runner, function_tool, trace
 from dotenv import load_dotenv
 
@@ -27,9 +26,3 @@ async def chat(message):
     with trace("Test API from Git"):
         result = await Runner.run(agent,message)
     return str(result.final_output)
-
-# async def chat(user_input: str, history):
-#     with trace("Test API from Git"):
-#         result = await Runner.run(agent,user_input)
-#     return result.final_output
-# gr.ChatInterface(fn=chat).launch()
