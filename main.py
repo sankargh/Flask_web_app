@@ -84,6 +84,14 @@ def read_root():
                     <a href="/chat"><b>Chat</b></a>
                 </div>
             </div>
+            <!-- The window showing results -->
+<iframe 
+    src="/chat" 
+    width="800" 
+    height="500" 
+    title="Results">
+</iframe>
+
         </main>
     </body>
     </html>
