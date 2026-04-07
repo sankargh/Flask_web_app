@@ -1,5 +1,14 @@
 from flask import Blueprint, jsonify
 # from .. import agent
+import sys
+import os
+
+# Get the directory of the current script, then go up one level
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(parent_dir)
+
+# Now you can import your module normally
+import agent
 
 api_bp = Blueprint("api", __name__)
 
@@ -8,7 +17,12 @@ def say_hello():
     
 @api_bp.get("/hello")
 def hello_world():
-    message = say_hello()
+    message = agent.say_hello()
+    return message
+
+@api_bp.get("/chat")
+async def call_agent():
+    message = await agent.chat("Tell me about maxwell")
     return message
 
 @api_bp.get("/api/data")
