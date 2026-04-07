@@ -19,7 +19,7 @@ def read_root():
             * { margin: 0; padding: 0; box-sizing: border-box; }
             body {
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-                background-color: #000000; color: #ffffff; line-height: 1.6; min-height: 100vh;
+                background-color: #DCDCDC; color: #ffffff; line-height: 1.6; min-height: 100vh;
                 display: flex; flex-direction: column;
             }
             header { border-bottom: 1px solid #333333; padding: 0; }
@@ -90,6 +90,14 @@ def read_root():
                     <h3>Sample Data</h3>
                     <p>Access sample JSON data through our REST API. Perfect for testing and development purposes.</p>
                     <a href="/api/data">Get Data →</a>
+                </div>
+                <div class="card">
+                    <p>Hello!</p>
+                    <a href="/hello"><b>Hello</b></a>
+                </div>
+                <div class="card">
+                    <p>Chat</p>
+                    <a href="/chat"><b>Chat</b></a>
                 </div>
             </div>
         </main>
