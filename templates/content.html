@@ -98,11 +98,11 @@ function chatData() {
     content.innerHTML = "Loading...";
 
     fetch("/chat") // internal API URL
-        .then(response => response.json())
-        .then(data => {
+        // .then(response => response.json())
+        .then(response => {
             // Render result
             // content.innerHTML = ` <pre>${JSON.stringify(data, null, 2)}</pre>`;
-            content.innerHTML = ` <pre>${data}</pre>`;
+            content.innerHTML = ` <pre>${response}</pre>`;
             
         })
         .catch(error => {
