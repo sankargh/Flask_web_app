@@ -81,7 +81,36 @@
     height="500" 
     title="Results">
 </iframe>
+<button onclick="chatData()">Get Local Events</button>
 
+<!-- Hidden section -->
+<div id="localEvents" style="display:none; margin-top:15px;">
+    <h3>Results</h3>
+    <div id="chatContent">Loading...</div>
+</div>
+<script>
+function chatData() {
+    const section = document.getElementById("localEvents");
+    const content = document.getElementById("chatContent");
+
+    // Show section on button click
+    section.style.display = "block";
+    content.innerHTML = "Loading...";
+
+    fetch("/chat") // internal API URL
+        .then(response => response.json())
+        .then(data => {
+            // Render result
+            content.innerHTML = `
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+        })
+        .catch(error => {
+            content.innerHTML = "Failed to load data";
+            console.error(error);
+        });
+}
+</script>
         </main>
     </body>
     </html>
