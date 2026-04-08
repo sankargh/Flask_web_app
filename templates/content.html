@@ -97,13 +97,13 @@ function chatData() {
     section.style.display = "block";
     content.innerHTML = "Loading...";
 
-    fetch("/api/data") // internal API URL
+    fetch("/chat") // internal API URL
         .then(response => response.json())
         .then(data => {
             // Render result
-            content.innerHTML = `
-                <pre>${JSON.stringify(data, null, 2)}</pre>
-            `;
+            // content.innerHTML = ` <pre>${JSON.stringify(data, null, 2)}</pre>`;
+            content.innerHTML = ` <pre>${data}</pre>`;
+            
         })
         .catch(error => {
             content.innerHTML = "Failed to load data";
