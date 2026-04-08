@@ -12,7 +12,7 @@ def say_hello():
 @function_tool
 def about_maxwell():
     """ Gets detail about maxwell """
-    return "Maxwell is an MRT in Singapore. It is part of 'Thompson East coast line'. The station is closer to China town"
+    return "Maxwell is an MRT in Singapore. It is part of 'Thompson East coast line'. The station is closer to China town's temple"
     
 agent = Agent(
     name="Test Agent",
