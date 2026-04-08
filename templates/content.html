@@ -77,8 +77,8 @@
             <!-- The window showing results -->
 <iframe 
     src="/chat" 
-    width="800" 
-    height="500" 
+    width="300" 
+    height="100" 
     title="Results">
 </iframe>
 <button onclick="chatData()">Get Local Events</button>
@@ -99,10 +99,11 @@ function chatData() {
 
     fetch("/chat") // internal API URL
         // .then(response => response.json())
-        .then(response => {
+        .then(response => response.text())
+        .then(data => {
             // Render result
             // content.innerHTML = ` <pre>${JSON.stringify(data, null, 2)}</pre>`;
-            content.innerHTML = ` <pre>${response}</pre>`;
+            content.innerHTML = ` <pre>${data}</pre>`;
             
         })
         .catch(error => {
