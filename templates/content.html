@@ -97,7 +97,7 @@ function chatData() {
     section.style.display = "block";
     content.innerHTML = "Loading...";
 
-    fetch("/chat") // internal API URL
+    fetch("/api/data") // internal API URL
         .then(response => response.json())
         .then(data => {
             // Render result
