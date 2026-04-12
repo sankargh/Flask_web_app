@@ -1,5 +1,4 @@
-from flask import Blueprint, jsonify
-# from .. import agent
+from flask import Blueprint
 import sys
 import os
 
@@ -20,21 +19,18 @@ def hello_world():
     message = agent.say_hello()
     return message
 
-@api_bp.get("/chat")
-async def call_agent():
-    message = await agent.chat("Tell me about maxwell")
+@api_bp.get("/about")
+def about():
+    message = "Hi, I'm learning AI and love building agents"
     return message
 
-@api_bp.get("/api/data")
-def get_sample_data():
-    return jsonify(
-        {
-            "data": [
-                {"id": 1, "name": "Sample Item 1", "value": 100},
-                {"id": 2, "name": "Sample Item 2", "value": 200},
-                {"id": 3, "name": "Sample Item 3", "value": 300},
-            ],
-            "total": 3,
-            "timestamp": "2024-01-01T00:00:00Z",
-        }
-    )
+@api_bp.get("/local")
+async def local():
+    # message = await agent.local("Tell me about maxwell")
+    message = await agent.local("Give the information about local events in Singapore")
+    return message
+
+@api_bp.get("/gold")
+async def get_goldrate():
+    message = await agent.get_goldrate("Get current gold rate in India")
+    return message
