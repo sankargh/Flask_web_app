@@ -1,28 +1,35 @@
-from agents import Agent, Runner, function_tool, trace
-from dotenv import load_dotenv
+from flask import Blueprint, jsonify
+import sys
+import os
 
-load_dotenv(override=True)
+# Get the directory of the current script, then go up one level
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(parent_dir)
 
-# Hello Function definition
+# Now, import your module normally
+import agent
+
+api_bp = Blueprint("api", __name__)
+
 def say_hello():
-    """Returns simple hello text."""
-    return "Hello, World! I am an agent!"
-
-# Maxwell Function definition
-@function_tool
-def about_maxwell():
-    """ Gets detail about maxwell """
-    return "Maxwell is an MRT in Singapore. It is part of 'Thompson East coast line'. The station is closer to China town's temple"
+    return "Hello from same method!"
     
-agent = Agent(
-    name="Test Agent",
-    instructions="Tell me about in Singapore with tools provided",
-    tools=[about_maxwell],
-    model="gpt-4o-mini"
-)
+@api_bp.get("/hello")
+def hello_world():
+    message = agent.say_hello()
+    return message
 
-#Chat function definition
-async def chat(message):
-    with trace("Test API from Git"):
-        result = await Runner.run(agent,message)
-    return str(result.final_output)
+@api_bp.get("/about")
+def about():
+    message = "Hi, I'm learning AI and love building agents"
+    return message
+
+@api_bp.get("/local")
+async def local():
+    message = await agent.local("Give the information about local events in Singapore")
+    return message
+
+@api_bp.get("/gold")
+async def get_goldrate():
+    message = await agent.get_goldrate("Get current gold rate in India")
+    return message
