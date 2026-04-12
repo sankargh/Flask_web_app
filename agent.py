@@ -62,12 +62,12 @@ gold_agent = Agent(
 
 #Local Event function definition
 async def local(message):
-    with trace("Test API from Git"):
+    with trace("Local events"):
         result = await Runner.run(local_agent,message)
     return str(result.final_output)
 
 #Gold price function definition
 async def get_goldrate(message):
-    with trace("Get Gold rate"):
+    with trace("Gold price"):
         result = await Runner.run(gold_agent,message)
     return str(result.final_output)
