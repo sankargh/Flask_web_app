@@ -1,5 +1,3 @@
-from curses import def_prog_mode
-from turtle import mode
 from agents import Agent, Runner, function_tool, trace, WebSearchTool
 from dotenv import load_dotenv
 
